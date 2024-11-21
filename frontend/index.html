@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Career Mentor</title>
+  <style>
+    /* Reset default margins and paddings */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* App Container */
+    .App {
+      text-align: center;
+    }
+
+    /* Header Section */
+    header {
+      background-color: #282c34;
+      color: white;
+      padding: 20px;
+      border-bottom: 4px solid #007bff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 1rem;
+    }
+
+    /* Learning Paths Section */
+    .learning-paths {
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 900px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .learning-paths h2 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: #007bff;
+    }
+
+    .paths {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .path-card {
+      background: #f4f4f4;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .path-card h3 {
+      margin-bottom: 10px;
+      color: #333;
+      font-size: 1.2rem;
+    }
+
+    .path-card p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .path-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Resume Upload Section */
+    .resume-upload {
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .resume-upload h2 {
+      font-size: 1.8rem;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    .resume-textarea {
+      width: 90%;
+      max-width: 600px;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Footer Section */
+    footer {
+      margin-top: 40px;
+      padding: 10px;
+      background-color: #282c34;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="App">
+    <!-- Header Section -->
+    <header>
+      <h1>AI Career Mentor</h1>
+      <p>Your personalized guide to success in AI and tech careers.</p>
+    </header>
+
+    <!-- Learning Paths Section -->
+    <section class="learning-paths">
+      <h2>Explore Learning Paths</h2>
+      <div class="paths">
+        <div class="path-card">
+          <h3>Data Scientist</h3>
+          <p>Learn Python, Machine Learning, and Data Visualization.</p>
+        </div>
+        <div class="path-card">
+          <h3>AI Engineer</h3>
+          <p>Master Deep Learning, TensorFlow, and Model Deployment.</p>
+        </div>
+        <div class="path-card">
+          <h3>ML Researcher</h3>
+          <p>Dive into Reinforcement Learning, GANs, and Transformers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Upload Section -->
+    <section class="resume-upload">
+      <h2>Upload Your Resume</h2>
+      <textarea
+        class="resume-textarea"
+        placeholder="Write a brief summary or note about your career."
+      ></textarea>
+      <input
+        type="file"
+        id="resumeInput"
+        accept=".doc, .docx, .pdf"
+        style="display: none;"
+      />
+      <button onclick="document.getElementById('resumeInput').click();">
+        Upload Resume
+      </button>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2024 AI Career Mentor. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // JavaScript to handle file upload
+    const resumeInput = document.getElementById('resumeInput');
+    resumeInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        alert(`File uploaded: ${file.name}`);
+      }
+    });
+  </script>
+</body>
+</html>
